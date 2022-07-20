@@ -1,0 +1,12 @@
+<div  class="text-white row row-cols-1 row-cols-sm-1  row-cols-md-3 row-cols-lg-3 justify-content-center mb-5">
+
+  <div *ngFor="let photo of photos" class="col text-black mt-3 " (click)="onClick(photo.id)" >
+    <div class="card h-100 shadow" style="cursor: pointer">
+      <img [src]="photo.thumbnailUrl" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{photo.title}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+

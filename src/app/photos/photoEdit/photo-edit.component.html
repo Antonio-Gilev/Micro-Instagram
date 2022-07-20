@@ -1,0 +1,72 @@
+<div class="card shadow mt-3">
+  <div class="card-header">
+    Edit Photo
+  </div>
+
+  <div class="card-body" *ngIf="photo">
+    <form ngNativeValidate #form="ngForm"
+          (ngSubmit)="savePhoto(form)">
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="photoTitleId">Photo Title</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="photoTitleId"
+                 type="text"
+                 name="title"
+                 [(ngModel)]="photo.title"
+                 required
+          />
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="albumId">Album Id</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="albumId"
+                 type="number"
+                 name="albumId"
+                 required
+                 [(ngModel)]="photo.albumId"
+                 min="1"
+                 max="100"
+          />
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="url">Url</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="url"
+                 type="text"
+                 name="url"
+                 [(ngModel)]="photo.url"
+                 required />
+        </div>
+      </div>
+
+      <div class="form-group row mb-3">
+        <label class="col-md-2 col-form-label"
+               for="thumbnailUrl">Thumbnail Url</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="thumbnailUrl"
+                 type="text"
+                 name="thumbnailUrl"
+                 [(ngModel)]="photo.thumbnailUrl"
+                 required />
+        </div>
+      </div>
+
+      <button class="btn btn-outline-secondary" (click)="onBack()">Back</button>
+      <button class="btn btn-success ms-2" type="submit">Submit</button>
+
+    </form>
+  </div>
+
+</div>
